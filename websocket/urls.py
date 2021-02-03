@@ -6,4 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.IndeView.as_view()),
     path("ws/", views.websocket_view),
+    #asdf
 ]

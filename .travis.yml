@@ -1,0 +1,13 @@
+language: python
+
+python:
+- "3.8"
+
+install:
+- pip install -r requirements.txt
+
+script:
+- cp websocket/settings.py.example websocket/settings.py
+- python manage.py test
+- if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+  echo "Deploying"; else echo "Merging"; fi
